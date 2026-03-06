@@ -1,0 +1,43 @@
+Scenario 1: High-Velocity Social Media Feed
+
+Chosen solution: NoSQL
+
+A new social media platform must store millions of posts per hour, where the structure of posts can frequently change (text, images, polls, location, etc.). For this type of workload, NoSQL is the better choice.
+
+Reasons:
+
+Horizontal Scalability
+Social media feeds require the system to scale across many servers to handle very high write and read throughput. NoSQL databases (such as document or key-value stores) are designed for horizontal scaling, allowing the system to distribute data across many nodes efficiently.
+
+Schema Flexibility
+Social media posts often contain different types of content. A fixed schema would require frequent schema migrations. NoSQL databases support schema-less or flexible schemas, allowing new fields (e.g., polls, reactions, media types) to be added without altering the database structure.
+
+High Write Velocity
+Millions of posts, comments, and interactions can occur every hour. NoSQL databases are optimized for high-volume writes and rapid data ingestion, which is ideal for real-time social media workloads.
+
+Eventual Consistency is Acceptable
+In social media systems, slight delays in synchronization (eventual consistency) are generally acceptable. For example, if a like count updates a few seconds later, it does not critically affect the system.
+
+Therefore, NoSQL is suitable because it prioritizes scalability, flexibility, and performance under high-velocity workloads.
+
+Scenario 2: Secure Bank Ledger System
+
+Chosen solution: SQL
+
+A banking ledger records financial transactions between accounts, where accuracy, consistency, and reliability are critical. In this case, SQL databases are the appropriate choice.
+
+Reasons:
+
+ACID Transactions
+Banking systems require strict ACID properties (Atomicity, Consistency, Isolation, Durability). SQL databases guarantee that transactions either complete fully or fail completely, ensuring that money cannot disappear or be duplicated.
+
+Strong Consistency
+Financial records must always reflect the correct account balances. SQL databases enforce strong consistency, ensuring all users see the same correct data at all times.
+
+Structured Data Model
+Bank records follow a well-defined structure (accounts, balances, transactions). SQL databases work best with structured schemas, which help maintain data integrity and enforce constraints such as foreign keys and validations.
+
+Reliability and Auditing
+Banking systems require transaction logs, auditing, and traceability. SQL systems provide robust transaction logs and recovery mechanisms, making them suitable for financial compliance and auditing.
+
+Therefore, SQL is the best choice because it guarantees ACID transactions, strong consistency, and reliable financial record keeping.
